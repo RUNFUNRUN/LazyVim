@@ -4,5 +4,5 @@ My configuration for [LazyVim](https://github.com/LazyVim/LazyVim) from [a start
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 ```sh
-git clone https://github.com/RUNFUNRUN/LazyVim ~/.config/nvim
+git clone git@github.com:RUNFUNRUN/LazyVim.git ~/.config/nvim
 ```
