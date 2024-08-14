@@ -10,11 +10,10 @@ return {
       },
       ---@type lspconfig.options
       servers = {
-        pyright = {},
         emmet_ls = {
           filetypes = {
-            "css",
             "html",
+            "css",
             "javascriptreact",
             "typescriptreact",
             "astro",
