@@ -10,8 +10,6 @@ map("n", "-", "<C-x>", opts)
 map("n", "<C-a>", "gg<S-v>G", opts)
 map("n", "<Enter>", "o<Esc>", opts)
 map("n", "<S-Enter>", "O<Esc>", opts)
-map("n", "s", "<Nop>", opts)
-map("n", "S", "<Nop>", opts)
 
 vim.api.nvim_set_keymap("n", "dd", "<Cmd>lua Delete_line()<CR>", opts)
 
