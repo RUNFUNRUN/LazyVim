@@ -1,6 +1,6 @@
 require("utils")
-local inlay_hint = require("plugins.lsp.inlay_hint")
+local options = require("plugins.lsp.options")
 local java = require("plugins.lsp.java")
 local emmet = require("plugins.lsp.emmet")
 
-return TableConcat(inlay_hint, emmet, java)
+return TableConcat(options, emmet, java)
