@@ -4,6 +4,8 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 map("i", "jj", "<Esc>", opts)
+map("x", "p", "P", opts)
+map("x", "P", "p", opts)
 map("n", "<Esc><Esc>", "<Cmd>nohlsearch<CR>", opts)
 map("n", "+", "<C-a>", opts)
 map("n", "-", "<C-x>", opts)
