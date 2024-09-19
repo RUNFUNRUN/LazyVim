@@ -1,3 +1,4 @@
+require("utils")
 local options = require("plugins.lsp.options")
 local typescript = require("plugins.lsp.typescript")
 local java = require("plugins.lsp.java")
