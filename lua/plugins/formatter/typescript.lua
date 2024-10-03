@@ -21,10 +21,10 @@ local prettier_filename = {
 }
 
 local biome_root_dir = nvim_lsp.util.root_pattern(biome_filename)
-local is_biome_repo = biome_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
+local is_biome_repo = biome_root_dir(LazyVim.root.get()) ~= nil
 
 local prettier_root_dir = nvim_lsp.util.root_pattern(prettier_filename)
-local is_prettier_repo = prettier_root_dir(vim.api.nvim_buf_get_name(0)) ~= nil
+local is_prettier_repo = prettier_root_dir(LazyVim.root.get()) ~= nil
 
 if is_biome_repo then
   return {
