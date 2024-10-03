@@ -21,7 +21,9 @@ return {
         options = {
           theme = "auto",
           globalstatus = vim.o.laststatus == 3,
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+          disabled_filetypes = {
+            statusline = { "dashboard", "alpha", "ministarter" },
+          },
         },
         sections = {
           lualine_a = { "mode" },
@@ -38,7 +40,12 @@ return {
                 hint = icons.diagnostics.Hint,
               },
             },
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            {
+              "filetype",
+              icon_only = true,
+              separator = "",
+              padding = { left = 1, right = 0 },
+            },
             { LazyVim.lualine.pretty_path() },
           },
           lualine_x = {
@@ -47,7 +54,8 @@ return {
                 return require("noice").api.status.command.get()
               end,
               cond = function()
-                return package.loaded["noice"] and require("noice").api.status.command.has()
+                return package.loaded["noice"]
+                  and require("noice").api.status.command.has()
               end,
               color = function()
                 return LazyVim.ui.fg("Statement")
@@ -58,7 +66,8 @@ return {
                 return require("noice").api.status.mode.get()
               end,
               cond = function()
-                return package.loaded["noice"] and require("noice").api.status.mode.has()
+                return package.loaded["noice"]
+                  and require("noice").api.status.mode.has()
               end,
               color = function()
                 return LazyVim.ui.fg("Constant")
