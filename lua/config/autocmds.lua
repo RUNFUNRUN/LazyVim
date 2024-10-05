@@ -2,14 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- apply mdx filetype
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.mdx",
-  command = "set filetype=markdown.mdx",
-})
+local autocmd = vim.api.nvim_create_autocmd
 
 -- convert `bun.lockb` from bin to text
-vim.api.nvim_create_autocmd("BufReadCmd", {
+autocmd("BufReadCmd", {
   pattern = "bun.lockb",
   callback = function()
     local path = vim.fn.expand("%:p")
