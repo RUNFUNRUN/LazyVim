@@ -23,6 +23,9 @@ return {
           completeopt = "menu,menuone,noinsert"
             .. (auto_select and "" or ",noselect"),
         },
+        window = {
+          documentation = cmp.config.window.bordered(),
+        },
         preselect = auto_select and cmp.PreselectMode.Item
           or cmp.PreselectMode.None,
         mapping = cmp.mapping.preset.insert({
