@@ -11,6 +11,11 @@ return {
           opts = { skip = true },
         },
       },
+      views = {
+        hover = {
+          border = { style = "rounded" },
+        },
+      },
     },
   },
 }
