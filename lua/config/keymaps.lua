@@ -14,6 +14,7 @@ map("n", "<C-a>", "gg<S-v>G", opts)
 map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
 map("n", "<C-/>", lazyterm, { desc = "Terminal (root dir)" })
 map("n", "<C-_>", lazyterm, { desc = "which_key_ignore" })
+map("n", "x", '"_x', opts)
 -- don't store a blank line in registers
 map("n", "dd", function()
   local line = vim.api.nvim_get_current_line()
