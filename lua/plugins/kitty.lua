@@ -4,6 +4,11 @@ if os.getenv("KITTY_WINDOW_ID") == nil then
   return {}
 end
 
+-- do not load on commit message
+if vim.fn.expand("%:t") == "COMMIT_EDITMSG" then
+  return {}
+end
+
 return {
   {
     "vhyrro/luarocks.nvim",
