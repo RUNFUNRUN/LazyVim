@@ -1,4 +1,11 @@
 return {
+  -- mercurial is required
+  {
+    "sindrets/diffview.nvim",
+    init = function()
+      require("diffview").setup()
+    end,
+  },
   {
     "tronikelis/conflict-marker.nvim",
     opts = {
