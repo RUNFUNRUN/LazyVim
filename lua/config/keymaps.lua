@@ -1,19 +1,10 @@
-local util = require("lazyvim.util")
-
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
-
-local lazyterm = function()
-  util.terminal(nil, { cwd = util.root(), border = "rounded" })
-end
 
 map("n", "<Esc><Esc>", "<Cmd>nohlsearch<CR>", opts)
 map("n", "+", "<C-a>", opts)
 map("n", "-", "<C-x>", opts)
 map("n", "<C-a>", "gg<S-v>G", opts)
-map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<C-/>", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<C-_>", lazyterm, { desc = "which_key_ignore" })
 map("n", "x", '"_x', opts)
 -- don't store a blank line in registers
 map("n", "dd", function()
