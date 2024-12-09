@@ -25,15 +25,15 @@ return {
     init = function(opts)
       require("showkeys").setup(opts)
 
-      local state = false
+      local enable = false
       Snacks.toggle({
         name = "Showkeys",
         get = function()
-          return state
+          return enable
         end,
         set = function()
           require("showkeys").toggle()
-          state = not state
+          enable = not enable
         end,
       }):map("<leader>uk")
     end,
