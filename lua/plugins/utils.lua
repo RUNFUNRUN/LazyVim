@@ -17,13 +17,12 @@ return {
   {
     "nvzone/showkeys",
     dependencies = { "folke/snacks.nvim" },
-    cmd = "ShowkeysToggle",
     opts = {
       timeout = 3,
       maxkeys = 5,
     },
-    init = function(opts)
-      require("showkeys").setup(opts)
+    init = function()
+      local showkeys = require("showkeys")
 
       local enable = false
       Snacks.toggle({
@@ -32,7 +31,7 @@ return {
           return enable
         end,
         set = function()
-          require("showkeys").toggle()
+          showkeys.toggle()
           enable = not enable
         end,
       }):map("<leader>uk")
