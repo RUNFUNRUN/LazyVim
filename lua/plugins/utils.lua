@@ -9,9 +9,7 @@ return {
   -- discord rich presence
   {
     "andweeb/presence.nvim",
-    init = function()
-      require("presence").setup({})
-    end,
+    lazy = false,
   },
   -- show key inputs in neovim
   {
@@ -23,16 +21,13 @@ return {
     },
     init = function()
       local showkeys = require("showkeys")
-
-      local enable = false
       Snacks.toggle({
         name = "Showkeys",
         get = function()
-          return enable
+          return require("showkeys.state").visible
         end,
         set = function()
           showkeys.toggle()
-          enable = not enable
         end,
       }):map("<leader>uk")
     end,
