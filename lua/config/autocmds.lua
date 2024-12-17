@@ -7,8 +7,18 @@ autocmd("BufReadCmd", {
     local path = vim.fn.expand("%:p")
     local output = vim.fn.systemlist("bun " .. path)
     vim.api.nvim_buf_set_lines(0, 0, -1, true, output)
-    vim.opt_local.filetype = "conf"
-    vim.opt_local.readonly = true
-    vim.opt_local.modifiable = false
+    vim.bo.filetype = "conf"
+    vim.bo.readonly = true
+    vim.bo.modifiable = false
+  end,
+})
+
+-- load `bun.lock` as jsonc
+autocmd("BufRead", {
+  pattern = "bun.lock",
+  callback = function()
+    vim.bo.filetype = "jsonc"
+    vim.bo.readonly = true
+    vim.bo.modifiable = false
   end,
 })
