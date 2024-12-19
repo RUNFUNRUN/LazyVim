@@ -58,7 +58,7 @@ return {
                   and require("noice").api.status.command.has()
               end,
               color = function()
-                return LazyVim.ui.fg("Statement")
+                return { fg = Snacks.util.color("Statement") }
               end,
             },
             {
@@ -70,7 +70,7 @@ return {
                   and require("noice").api.status.mode.has()
               end,
               color = function()
-                return LazyVim.ui.fg("Constant")
+                return { fg = Snacks.util.color("Constant") }
               end,
             },
             {
@@ -81,14 +81,14 @@ return {
                 return package.loaded["dap"] and require("dap").status() ~= ""
               end,
               color = function()
-                return LazyVim.ui.fg("Debug")
+                return { fg = Snacks.util.color("Debug") }
               end,
             },
             {
               require("lazy.status").updates,
               cond = require("lazy.status").has_updates,
               color = function()
-                return LazyVim.ui.fg("Special")
+                return { fg = Snacks.util.color("Special") }
               end,
             },
             {
