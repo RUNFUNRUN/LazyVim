@@ -8,7 +8,7 @@ return {
         ["<S-Tab>"] = { "select_prev", "fallback" },
       },
       completion = {
-        list = { selection = "manual" },
+        list = { selection = { preselect = false, auto_insert = false } },
         documentation = { window = { border = "rounded" } },
       },
     },
