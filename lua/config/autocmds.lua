@@ -22,3 +22,13 @@ autocmd("BufRead", {
     vim.bo.modifiable = false
   end,
 })
+
+-- on Windows or WSL: when exiting Insert mode, disable the IME.
+if vim.env.DISPLAY and (vim.fn.has("wsl") or vim.fn.has("win32")) then
+  autocmd("InsertLeave", {
+    pattern = "*",
+    callback = function()
+      vim.fn.system("ime_toggle.exe en")
+    end,
+  })
+end
