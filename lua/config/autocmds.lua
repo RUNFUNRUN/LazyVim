@@ -23,7 +23,8 @@ autocmd("BufRead", {
   end,
 })
 
--- on Windows or WSL: when exiting Insert mode, disable the IME.
+-- on Windows or WSL: When exiting Insert mode, disable the IME.
+-- check here https://github.com/RUNFUNRUN/ime-toggle
 if vim.env.DISPLAY and (vim.fn.has("wsl") or vim.fn.has("win32")) then
   autocmd("InsertLeave", {
     pattern = "*",
