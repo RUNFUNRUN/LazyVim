@@ -56,7 +56,9 @@ if is_biome_repo then
       },
     },
   }
-elseif is_prettier_repo then
+end
+
+if is_prettier_repo then
   return {
     {
       "stevearc/conform.nvim",
@@ -81,7 +83,9 @@ elseif is_prettier_repo then
       },
     },
   }
-elseif is_deno_repo then
+end
+
+if is_deno_repo then
   return {
     {
       "stevearc/conform.nvim",
@@ -107,6 +111,6 @@ elseif is_deno_repo then
       },
     },
   }
-else
-  return {}
 end
+
+return {}
