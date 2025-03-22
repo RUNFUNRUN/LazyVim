@@ -32,4 +32,13 @@ return {
       }):map("<leader>uk")
     end,
   },
+  -- practice typing
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {
+      mode = "phrases",
+    },
+    cmd = { "Typr", "TyprStats" },
+  },
 }
