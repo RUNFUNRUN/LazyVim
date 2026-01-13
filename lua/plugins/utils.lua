@@ -60,4 +60,28 @@ return {
     },
     cmd = { "Typr", "TyprStats" },
   },
+  {
+    "runfunrun/comment-translate.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "folke/snacks.nvim" },
+    init = function()
+      require("comment-translate").setup({
+        enabled = false,
+        client = {
+          deepl = {
+            api_key = os.getenv("DEEPL_API_KEY"),
+          },
+        },
+      })
+
+      Snacks.toggle({
+        name = "Comment Translate",
+        get = function()
+          return require("comment-translate").is_enabled()
+        end,
+        set = function()
+          require("comment-translate").toggle()
+        end,
+      }):map("<leader>ut")
+    end,
+  },
 }
