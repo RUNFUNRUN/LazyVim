@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "deno",
         "astro-language-server",
+        "oxlint",
       },
     },
   },

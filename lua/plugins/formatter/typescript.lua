@@ -25,6 +25,12 @@ local deno_filename = {
   "deno.jsonc",
 }
 
+local oxfmt_filename = {
+  "oxfmt.config.ts",
+  ".oxfmtrc.jsonc",
+  ".oxfmtrc.json",
+}
+
 local biome_root_dir = nvim_lsp.util.root_pattern(biome_filename)
 local is_biome_repo = biome_root_dir(LazyVim.root.get()) ~= nil
 
@@ -33,6 +39,9 @@ local is_prettier_repo = prettier_root_dir(LazyVim.root.get()) ~= nil
 
 local deno_root_dir = nvim_lsp.util.root_pattern(deno_filename)
 local is_deno_repo = deno_root_dir(LazyVim.root.get()) ~= nil
+
+local oxfmt_root_dir = nvim_lsp.util.root_pattern(oxfmt_filename)
+local is_oxfmt_repo = oxfmt_root_dir(LazyVim.root.get()) ~= nil
 
 if is_biome_repo then
   return {
@@ -107,6 +116,41 @@ if is_deno_repo then
           sass = { "deno_fmt" },
           less = { "deno_fmt" },
           yaml = { "deno_fmt" },
+        },
+      },
+    },
+  }
+end
+
+if is_oxfmt_repo then
+  return {
+    {
+      "stevearc/conform.nvim",
+      opts = {
+        formatters_by_ft = {
+          javascript = { "oxfmt" },
+          typescript = { "oxfmt" },
+          javascriptreact = { "oxfmt" },
+          typescriptreact = { "oxfmt" },
+          astro = { "oxfmt" },
+          angular = { "oxfmt" },
+          svelte = { "oxfmt" },
+          vue = { "oxfmt" },
+          json = { "oxfmt" },
+          jsonc = { "oxfmt" },
+          json5 = { "oxfmt" },
+          html = { "oxfmt" },
+          css = { "oxfmt" },
+          scss = { "oxfmt" },
+          sass = { "oxfmt" },
+          less = { "oxfmt" },
+          yaml = { "oxfmt" },
+          toml = { "oxfmt" },
+          markdown = { "oxfmt" },
+          ["markdown.mdx"] = { "oxfmt" },
+          graphql = { "oxfmt" },
+          handlebars = { "oxfmt" },
+          ember = { "oxfmt" },
         },
       },
     },
